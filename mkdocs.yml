@@ -1,0 +1,6 @@
+site_name: Servidor de Design de Software
+nav:
+  - Home: index.md
+  - Desenvolvedor: desenvolvedor.md
+  - Professor: professor.md
+  - Aluno: aluno.md
