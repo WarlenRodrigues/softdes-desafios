@@ -86,9 +86,9 @@ def get_quiz(_id, user):
     conn = sqlite3.connect(DBNAME)
     cursor = conn.cursor()
     if user in ("admin", "fabioja"):
-        cursor.execute("SELECT id, release, expire, problem, tests, results, diagnosis, numb from QUIZ where id = {0}".format(id))
+        cursor.execute("SELECT id, release, expire, problem, tests, results, diagnosis, numb from QUIZ where id = {0}".format(_id))
     else:
-        cursor.execute("SELECT id, release, expire, problem, tests, results, diagnosis, numb from QUIZ where id = {0} and release < '{1}'".format(id, datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        cursor.execute("SELECT id, release, expire, problem, tests, results, diagnosis, numb from QUIZ where id = {0} and release < '{1}'".format(_id, datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
     info = [reg for reg in cursor.fetchall()]
     conn.close()
     return info
@@ -171,7 +171,7 @@ def main():
         page = 2
         return render_template('index.html', username=auth.username(),
                     challenges=challenges, p=page, msg=msg)
-    quiz = get_quiz(id, auth.username())
+    quiz = get_quiz(_id, auth.username())
 
     if len(quiz) == 0:
         msg = "Oops... Desafio invalido!"
