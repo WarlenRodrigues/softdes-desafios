@@ -1,0 +1,1 @@
+Insert into QUIZ(numb, release, expire, problem, tests, results, diagnosis) values (2, '2021-08-24','2022-12-31 23:59:59','desafio com erro em somente um teste','[[1],[2],[3]]','[0, 1, 0]','["hhh","jjj","lll"]');
