@@ -18,8 +18,13 @@ sh scripts/install-libs.sh
 ## Criação e inserção no banco de dados
 Para que seja possível testar seus ajustes crie usuários e quizes no banco de dados sqlite.
 
-Para criar o db com desafios é necessário modificar ou acrescentar entradas no arquivo quiz.sql. 
+Para criar o db com desafios é necessário modificar ou acrescentar entradas no arquivo quiz.sql. Nesse arquivo existe um código em SQL com a criação do banco de dados, das tabelas necessárias para sua utilização e inserção de desafios.
 
+Para que esse cript seja executado basta rodar o comando a seguir na pasta src
+
+```sh
+sh scripts/create-db.sh
+```
 
 
 
