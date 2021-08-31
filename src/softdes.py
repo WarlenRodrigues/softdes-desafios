@@ -59,9 +59,7 @@ def get_quizes(user):
     if user in ("admin", "fabioja"):
         cursor.execute("SELECT id, numb from QUIZ")
     else:
-        cursor.execute("""SELECT id, numb from QUIZ 
-                        where release < '{0}'"""
-                        .format(datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        cursor.execute("SELECT id, numb from QUIZ where release < '{0}'".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
     info = [reg for reg in cursor.fetchall()]
     conn.close()
     return info
@@ -70,9 +68,7 @@ def get_user_quiz(userid, quizid):
     """Get user quizes from database"""
     conn = sqlite3.connect(DBNAME)
     cursor = conn.cursor()
-    cursor.execute("""SELECT sent,answer,result
-                    from USERQUIZ where userid = '{0}' and quizid = {1} 
-                    order by sent desc""".format(userid, quizid))
+    cursor.execute("SELECT sent,answer,result from USERQUIZ where userid = '{0}' and quizid = {1} order by sent desc".format(userid, quizid))
     info = [reg for reg in cursor.fetchall()]
     conn.close()
     return info
@@ -81,8 +77,7 @@ def set_user_quiz(userid, quizid, sent, answer, result):
     """Insert user quiz"""
     conn = sqlite3.connect(DBNAME)
     cursor = conn.cursor()
-    cursor.execute("""insert into USERQUIZ(userid,quizid,sent,answer,result)
-                    values (?,?,?,?,?);""", (userid, quizid, sent, answer, result))
+    cursor.execute("insert into USERQUIZ(userid,quizid,sent,answer,result) values (?,?,?,?,?);", (userid, quizid, sent, answer, result))
     conn.commit()
     conn.close()
 
@@ -91,12 +86,9 @@ def get_quiz(_id, user):
     conn = sqlite3.connect(DBNAME)
     cursor = conn.cursor()
     if user in ("admin", "fabioja"):
-        cursor.execute("""SELECT id, release, expire, problem, tests, results, diagnosis, numb
-                        from QUIZ where id = {0}""".format(_id))
+        cursor.execute("SELECT id, release, expire, problem, tests, results, diagnosis, numb from QUIZ where id = {0}".format(id))
     else:
-        cursor.execute("""SELECT id, release, expire, problem, tests, results, diagnosis, numb
-                    from QUIZ where id = {0} and release < '{1}'"""
-                    .format(_id, datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+        cursor.execute("SELECT id, release, expire, problem, tests, results, diagnosis, numb from QUIZ where id = {0} and release < '{1}'".format(id, datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
     info = [reg for reg in cursor.fetchall()]
     conn.close()
     return info
