@@ -1,3 +1,42 @@
+# Desenvolvedor:
+
+Essa plataforma é utilizada para fins educacionais. Ela é um espaço em que o professor pode apresentar desafios de programação que deverão ser respondidos em forma de código por alunos. Dessa forma existe um banco de dados que guarda as informações dos alunos, desafios propostos pelo professor e correções e sugestões que serão retornadas para o aluno quando algum teste executado sobre suas respostas falhar.
+
+Para iniciar o desenvolvimento da plataforma siga o tutorial a seguir:
+
+## instalação
+entre na pasta srcs
+
+```sh
+cd src
+```
+Rode o comando a seguir para rodar o script de instalação
+```sh
+sh scripts/install-libs.sh
+```
+
+## Criação e inserção no banco de dados
+Para que seja possível testar seus ajustes crie usuários e quizes no banco de dados sqlite.
+
+Para criar o db com desafios é necessário modificar ou acrescentar entradas no arquivo quiz.sql. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Quid audent fenestris pennisque tum aequor Latonae
 
 ## Mare pars
