@@ -4,6 +4,8 @@ Este projeto é o servidor de testes da matéria de Design de Software do curso 
 
 ![Screenshot]()
 
-[Documentação de usuario]()
+[Documentação de usuario - Professor](https://warlenrodrigues.github.io/softdes-desafios/professor/)
 
-[Documentação de desenvolvedor]()
+[Documentação de usuario - Aluno](https://warlenrodrigues.github.io/softdes-desafios/aluno/)
+
+[Documentação de desenvolvedor](https://warlenrodrigues.github.io/softdes-desafios/desenvolvedor/)
