@@ -16,7 +16,7 @@ Este projeto é o servidor de testes da matéria de Design de Software do curso 
 - [ ] Uma página inicial descrevendo o projeto e explicando seu uso esperado. Inclua links e screenshots do software rodando.
 
 ### Alunos
-- [ ] Uma página de guia de usuário para alunos. Este guia deverá mostrar passo a passo as seguintes tarefa
+- [x] Uma página de guia de usuário para alunos. Este guia deverá mostrar passo a passo as seguintes tarefa
   - [ ] entrar no servidor de desafios
   - [ ] enviar solução correta para desafio
   - [ ] enviar solução errada
