@@ -81,6 +81,19 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="1"><a href="#desenvolvedor" class="nav-link">Desenvolvedor:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#instalacao" class="nav-link">instalação</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#criacao-e-insercao-no-banco-de-dados" class="nav-link">Criação e inserção no banco de dados</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="1"><a href="#quid-audent-fenestris-pennisque-tum-aequor-latonae" class="nav-link">Quid audent fenestris pennisque tum aequor Latonae</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#mare-pars" class="nav-link">Mare pars</a>
@@ -98,6 +111,19 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
+<h1 id="desenvolvedor">Desenvolvedor:</h1>
+<p>Essa plataforma é utilizada para fins educacionais. Ela é um espaço em que o professor pode apresentar desafios de programação que deverão ser respondidos em forma de código por alunos. Dessa forma existe um banco de dados que guarda as informações dos alunos, desafios propostos pelo professor e correções e sugestões que serão retornadas para o aluno quando algum teste executado sobre suas respostas falhar.</p>
+<p>Para iniciar o desenvolvimento da plataforma siga o tutorial a seguir:</p>
+<h2 id="instalacao">instalação</h2>
+<p>entre na pasta srcs</p>
+<pre><code class="language-sh">cd src
+</code></pre>
+<p>Rode o comando a seguir para rodar o script de instalação</p>
+<pre><code class="language-sh">sh scripts/install-libs.sh
+</code></pre>
+<h2 id="criacao-e-insercao-no-banco-de-dados">Criação e inserção no banco de dados</h2>
+<p>Para que seja possível testar seus ajustes crie usuários e quizes no banco de dados sqlite.</p>
+<p>Para criar o db com desafios é necessário modificar ou acrescentar entradas no arquivo quiz.sql. </p>
 <h1 id="quid-audent-fenestris-pennisque-tum-aequor-latonae">Quid audent fenestris pennisque tum aequor Latonae</h1>
 <h2 id="mare-pars">Mare pars</h2>
 <p>Lorem markdownum humo, in phaedimus ipsa saltus, variarum pendet credulitas
