@@ -2,6 +2,6 @@
 
 Navegue nas abas acima para acessar a documentação desejada...
 
-- [Desenvolvedor](https://warlenrodrigues.github.io/softdes-desafios/desenvolvedor/): Baixae e rodar o projeto
+- [Desenvolvedor](https://warlenrodrigues.github.io/softdes-desafios/desenvolvedor/): Baixar e rodar o projeto
 - [Professor](https://warlenrodrigues.github.io/softdes-desafios/professor/): Disponibilizar desafios
 - [Aluno](https://warlenrodrigues.github.io/softdes-desafios/aluno/): Enviar tentativas de solução
