@@ -1,2 +1,4 @@
 site/*
 src/*.pyc
+__pycache__
+*.pyc

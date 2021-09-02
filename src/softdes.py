@@ -37,7 +37,7 @@ def lambda_handler(event):
 
 
         test = []
-        for index, _ in enumerate(args):
+        for index, arg in enumerate(args):
             if not 'desafio{0}'.format(ndes) in locals():
                 return "Nome da função inválido. Usar 'def desafio{0}(...)'".format(ndes)
 

@@ -30,6 +30,6 @@ Este projeto é o servidor de testes da matéria de Design de Software do curso 
 
 As seguintes informações devem estar presentes:
 
-- [ ] como configurar ambiente de desenvolvimento
-- [ ] instalação do software
+- [X] como configurar ambiente de desenvolvimento
+- [X] instalação do software
 - [ ] estrutura do código em alto nível
