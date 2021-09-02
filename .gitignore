@@ -1,3 +1,4 @@
 site/*
 src/*.pyc
 */__pycache__/*
+*.db
