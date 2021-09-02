@@ -31,12 +31,12 @@ Insert into QUIZ(numb, release, expire, problem, tests, results, diagnosis) valu
 
 onde:
 
-`numb`: Número do desafio
-`release`: Data de lançamento do desafio
-`expire`: Data de término do desafio
-`problem`: Nome do desafio
-`tests`: Testes para o desafio
-`results`: Resultados do desafio
+`numb`: Número do desafio  
+`release`: Data de lançamento do desafio  
+`expire`: Data de término do desafio  
+`problem`: Nome do desafio  
+`tests`: Testes para o desafio  
+`results`: Resultados do desafio  
 `diagnosis`: Feedback para as tentativas
 
 Edite essas informações e salve o arquivo para que o quiz seja disponibilizado com os dados corretos.
