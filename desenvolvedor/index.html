@@ -91,6 +91,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#rodando-a-pagina-do-projeto" class="nav-link">Rodando a página do projeto</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#organizacao-do-projeto" class="nav-link">Organização do projeto</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             
@@ -123,10 +131,22 @@
 </code></pre>
 <h2 id="criacao-e-insercao-no-banco-de-dados">Criação e inserção no banco de dados</h2>
 <p>Para que seja possível testar seus ajustes crie usuários e quizes no banco de dados sqlite.</p>
-<p>Para criar o db com desafios é necessário modificar ou acrescentar entradas no arquivo quiz.sql. Nesse arquivo existe um código em SQL com a criação do banco de dados, das tabelas necessárias para sua utilização e inserção de desafios.</p>
-<p>Para que esse cript seja executado basta rodar o comando a seguir na pasta src</p>
+<p>Para criar o db com desafios é necessário modificar ou acrescentar entradas no arquivo quiz.sql. Nesse arquivo existe um código em SQL com a criação do banco de dados, das tabelas necessárias para sua utilização e inserção de desafios. Dentro da pasta scripts, no arquivo create-db.sh o comando sqlite3 para rodar o arquivo .sql pode ser encontado.</p>
+<p>Para que esse script seja executado corretamente basta rodar o comando a seguir de dentro da pasta src</p>
 <pre><code class="language-sh">sh scripts/create-db.sh
 </code></pre>
+<p>Para criar um usuário crie um arquivo users.csv, caso ele já não exista e coloque nele o seu nome de usuário e o tipo. Depos de fazer isso rode o comando a seguir.</p>
+<pre><code class="language-sh">python3 adduser.py
+</code></pre>
+<p>O arquivo adduser.py abre o arquivo .csv e executa uma query para adicioná-lo ao banco de dados com uma senha hash. A primeira senha é o nome de usuário. É possível trocar a senha na plataforma.</p>
+<p>Caso seja necessário incluir mais desafios ou usuários no banco de dados cria arquivos em sql e rode com o comando encotrado no arquivo .sh descrito a cima.</p>
+<h2 id="rodando-a-pagina-do-projeto">Rodando a página do projeto</h2>
+<p>Para iniciar a página do projeto localmente para que seja possível testar suas modificações rode os seguintes comandos de dentro da pasta src:</p>
+<pre><code class="language-sh">export FLASK_APP=softdes.py
+flask run
+</code></pre>
+<p>No seu browser de preferência entre no endereço http://127.0.0.1:5000/ e digite o nome de usuário criado e a senha. Lembre-se que a senha inicial é o nome de usuário.</p>
+<h2 id="organizacao-do-projeto">Organização do projeto</h2>
 <h1 id="quid-audent-fenestris-pennisque-tum-aequor-latonae">Quid audent fenestris pennisque tum aequor Latonae</h1>
 <h2 id="mare-pars">Mare pars</h2>
 <p>Lorem markdownum humo, in phaedimus ipsa saltus, variarum pendet credulitas
