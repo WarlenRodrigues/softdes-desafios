@@ -1,46 +1,58 @@
-# Licet videntem praerupit spolia dumque trepidosque ausi
+# Documentação de Usuário para PROFESSORES
 
-## Refert fuerunt
+Esta plataforma servirá para professores de Design de Software disponibilizarem atividades (desafios) para os alunos ao longo do semestre.
 
-Lorem markdownum, quanta sumit pernocte fuit nec deme vocabis videbor cardine
-conanti patriae. Obstipui aureus. Ire illuc quaesitis famulasque Copia Tyrrhenae
-posset, clam, Neptunus. Levitate fors, contigit, rogant, mutata prius et. Docto
-praetulit imagine.
+## Pré requisito
 
-- Care vepre stella per telluris
-- Si gyrum laevaque crimen madidis
-- Deum carmen non nam ministri
-- Mota et qualia ponit
-- Tuos victus
+Para que as etapas seguintes funcionem sem maiores problemas, realize os passos descritos na [Documentação do Desenvolvedor](https://warlenrodrigues.github.io/softdes-desafios/desenvolvedor/) até a seção Rodando a Página do Projeto. Neste passo a passo, você garantirá seu acesso pleno às funcionalidades do servidor e terá tudo que precisa para lançar novos desafios.
 
-## Cum hunc praeferri lactis sequentis me faciem
+## Entrar no servidor de desafios
 
-Discreta inquam axis habe ista aderant turba, ut **seraque montes**, hostem
-*tendere et victus* ante: impete! Seposuit nullae pavonibus albis Perseu
-deriguere [carmine](http://cursussed.io/matrum.html) coniunx auroque: copia care
-videndi prendique carinae!
+Para acessar o servidor, entre com seu nome de usuário e senha quando for pedido pelo navegador. Este nome de usuário deverá ser criado ao longo dos passos descritos na [Documentação do Desenvolvedor](https://warlenrodrigues.github.io/softdes-desafios/desenvolvedor/).
+A primeira senha é seu nome de usuário. Por exemplo, se seu usuário é `fabio` sua senha também será `fabio`.
+Após o primeiro login, clique no link de Trocar Senha, na barra superior, e faça a troca de senha.
+Guarde essa senha pois será usada ao longo do semestre para acessar a plataforma outras vezes.
 
-## Casuraque concussit Aeaciden equi sacra noceat
+## Disponibilizando desafios
 
-Et i est rogant Iovem tenebrisque **ad artes** temploque corpora noxque oris;
-isse quoque patulas ferunt tonitribus. Nudaque [animo](http://inlimis.org/),
-ferae Cycnum lambit in bina *matrum*, illo hic iudice *sortis violenta* evulsum!
+Para disponibilizar um novo desafio, é necesário que você, professor, acesse a máquina que está hospedando o sistema (seja uma máquina local, seja um serviço de nuvem) para realizar os próximos procedimentos. **ATENÇÃO: durante a execução dos passos a seguir, o servidor ficará indisponível para os alunos**
 
-## Dumque tota apertum perlucenti loqui
+### Parar o servidor
 
-Est nova placidos cruentis amantem cruore potiora sedent, caput infelix Iani
-mihi. Sua torrentur, vulnere herba, *haec* nec interea dolore inpedit, a Indus
-isdem pondere. Illa ubi pro sincera novem dedisset prodit gentes consorte de.
-Cum *Peneiaque* praesentis ignes quid inpia vidisset sua caede; iter argenteus
-inplerat siste Charopem, quater. [Potuisse satis
-perpetiar](http://timor.net/nec-vidit.php)?
+Para enviar um desafio, o servidor precisa ser derrubado para que não haja incosistência nos dados devido aos possíveis estados do banco de dados. Sendo assim, será necessário matar o processo que está mantendo o servidor disponível. **O servidor passa a estar indisponível para os alunos a partir desse momento**.
 
-Dulichiae duobus intexere habentem [membris sanguine
-e](http://www.genus-aut.net/fulgetexhalat) illic
-[Iunone](http://saxavelaque.com/) humo navis tibi. Do exigua vellera formae, dat
-unda minus negare inertem. Oscula mixta parte quae urbem, felicia et patrumque
-vestes Megareus foedera a patrios Cerastae. Dea dubita tectis fata Tonanti dici
-qua, *via utinam* per cornua **quondam se** feras intibaque tibi satis. Saxo
-illius anhelitus formamque conreptus postera.
+### Editar o arquivo add_quiz.sql
 
-Consilii ventus. Mihi negat, tenebris nam: est quis sit recenti satum.
+No arquivo `add_quiz.sql` existe um comando SQL que insere seu novo desafio na base de dados de desafio. O conteúdo do arquivo é composto pelo seguinte comando:
+
+```sql
+Insert into QUIZ(numb, release, expire, problem, tests, results, diagnosis) values (2, '2018-08-01', '2022-12-31 23:59:59', 'Nome do Problema', '[[1], [2], [3]]', '[0,0,0]', '["a", "b", "c"]');
+```
+
+onde:
+
+`numb`: Número do desafio
+`release`: Data de lançamento do desafio
+`expire`: Data de término do desafio
+`problem`: Nome do desafio
+`tests`: Testes para o desafio
+`results`: Resultados do desafio
+`diagnosis`: Feedback para as tentativas
+
+Edite essas informações e salve o arquivo para que o quiz seja disponibilizado com os dados corretos.
+
+## Adicionando o novo desafio ao banco de dados já exstente
+
+Para que os valores do seu novo desafio sejam de fato inseridos no banco de dados de desafios, execute o seguinte comando na máquina que hospeda o servidor:
+
+```sh
+sqlite3 quiz.db < add_quiz.sql
+```
+
+## Disponibilizando o servidor novamente para os alunos
+
+Com seu novo desafio já adicionado ao banco de dados, basta disponibilizar o servidor novamente com o comando
+
+```sh
+flask run
+```
