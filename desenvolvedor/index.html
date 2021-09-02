@@ -95,20 +95,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#organizacao-do-projeto" class="nav-link">Organização do projeto</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#quid-audent-fenestris-pennisque-tum-aequor-latonae" class="nav-link">Quid audent fenestris pennisque tum aequor Latonae</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#mare-pars" class="nav-link">Mare pars</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#zonarumque-dumque-promissaque-illi-minores" class="nav-link">Zonarumque dumque promissaque illi minores</a>
+            <li class="nav-item" data-level="2"><a href="#estrutura-do-codigo" class="nav-link">Estrutura do código</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -123,7 +110,7 @@
 <p>Essa plataforma é utilizada para fins educacionais. Ela é um espaço em que o professor pode apresentar desafios de programação que deverão ser respondidos em forma de código por alunos. Dessa forma existe um banco de dados que guarda as informações dos alunos, desafios propostos pelo professor e correções e sugestões que serão retornadas para o aluno quando algum teste executado sobre suas respostas falhar.</p>
 <p>Para iniciar o desenvolvimento da plataforma siga o tutorial a seguir:</p>
 <h2 id="instalacao">instalação</h2>
-<p>entre na pasta srcs</p>
+<p>entre na pasta <strong>src</strong> com o comando a seguir</p>
 <pre><code class="language-sh">cd src
 </code></pre>
 <p>Rode o comando a seguir para rodar o script de instalação</p>
@@ -131,61 +118,26 @@
 </code></pre>
 <h2 id="criacao-e-insercao-no-banco-de-dados">Criação e inserção no banco de dados</h2>
 <p>Para que seja possível testar seus ajustes crie usuários e quizes no banco de dados sqlite.</p>
-<p>Para criar o db com desafios é necessário modificar ou acrescentar entradas no arquivo quiz.sql. Nesse arquivo existe um código em SQL com a criação do banco de dados, das tabelas necessárias para sua utilização e inserção de desafios. Dentro da pasta scripts, no arquivo create-db.sh o comando sqlite3 para rodar o arquivo .sql pode ser encontado.</p>
-<p>Para que esse script seja executado corretamente basta rodar o comando a seguir de dentro da pasta src</p>
+<p>Para criar o db com desafios é necessário modificar ou acrescentar entradas no arquivo <strong>quiz.sql</strong>. Nesse arquivo existe um código em SQL com a criação do banco de dados, das tabelas necessárias para sua utilização e inserção de desafios. Dentro da pasta <strong>scripts</strong>, no arquivo <strong>create-db.sh</strong> o comando sqlite3 para rodar o arquivo <em>.sql</em> pode ser encontado.</p>
+<p>Para que esse script seja executado corretamente basta rodar o comando a seguir de dentro da pasta <strong>src</strong></p>
 <pre><code class="language-sh">sh scripts/create-db.sh
 </code></pre>
-<p>Para criar um usuário crie um arquivo users.csv, caso ele já não exista e coloque nele o seu nome de usuário e o tipo. Depos de fazer isso rode o comando a seguir.</p>
+<p>Para criar um usuário crie um arquivo <strong>users.csv</strong>, caso ele já não exista e coloque nele o seu nome de usuário e o tipo. Depos de fazer isso rode o comando a seguir.</p>
 <pre><code class="language-sh">python3 adduser.py
 </code></pre>
-<p>O arquivo adduser.py abre o arquivo .csv e executa uma query para adicioná-lo ao banco de dados com uma senha hash. A primeira senha é o nome de usuário. É possível trocar a senha na plataforma.</p>
-<p>Caso seja necessário incluir mais desafios ou usuários no banco de dados cria arquivos em sql e rode com o comando encotrado no arquivo .sh descrito a cima.</p>
+<p>O arquivo <strong>adduser.py</strong> abre o arquivo <em>.csv</em> e executa uma query para adicioná-lo ao banco de dados com uma senha hash. A primeira senha é o nome de usuário. É possível trocar a senha na plataforma.</p>
+<p>Caso seja necessário incluir mais desafios ou usuários no banco de dados cria arquivos em sql e rode com o comando encotrado no arquivo <em>.sh</em> descrito a cima.</p>
 <h2 id="rodando-a-pagina-do-projeto">Rodando a página do projeto</h2>
-<p>Para iniciar a página do projeto localmente para que seja possível testar suas modificações rode os seguintes comandos de dentro da pasta src:</p>
+<p>Para iniciar a página do projeto localmente para que seja possível testar suas modificações rode os seguintes comandos de dentro da pasta <strong>src</strong>:</p>
 <pre><code class="language-sh">export FLASK_APP=softdes.py
 flask run
 </code></pre>
 <p>No seu browser de preferência entre no endereço http://127.0.0.1:5000/ e digite o nome de usuário criado e a senha. Lembre-se que a senha inicial é o nome de usuário.</p>
-<h2 id="organizacao-do-projeto">Organização do projeto</h2>
-<h1 id="quid-audent-fenestris-pennisque-tum-aequor-latonae">Quid audent fenestris pennisque tum aequor Latonae</h1>
-<h2 id="mare-pars">Mare pars</h2>
-<p>Lorem markdownum humo, in phaedimus ipsa saltus, variarum pendet credulitas
-postquam coniunx, tum non Quirini. Et priorum munus fixa ambae, carituraque
-invenit magis resoluta Rhoetei mutato; per.</p>
-<ol>
-<li>Vis terrigenam</li>
-<li>Mira coma ullam</li>
-<li>Si corpore ulvae frementem forma iterum</li>
-<li>Petitve cladis tecta</li>
-<li>Tumidaeque videres</li>
-</ol>
-<p>Nuda damnarat squamis, Amphimedon tecum; cervice licet medio alumnae ferioque
-Sicyonius et haec. Forma restat, natorum oris, via procul attollite in
-adloquitur carmine relinquam hi silentia nostras aequales dictis fulsit? Mare
-latet amore ore sat inmemor, et iam mea equo carina classe saxaque urbes. Signum
-<em>ira petit</em> viro, in metu effugiunt nate, in!</p>
-<h2 id="zonarumque-dumque-promissaque-illi-minores">Zonarumque dumque promissaque illi minores</h2>
-<p>Doloris <em>avis nec infantemque</em> tabellis quoque cauda habebat <strong>videres</strong>, me
-iuvenes. Iam regia linguae haec: Venus carebat pendentia illis, erit viscera in
-medio!</p>
-<p>Concita unde; miluus sint, fuit interea felicesque facta sacra fuerat.
-Intremuere <a href="http://www.tibi.io/">quam cursu residens</a> admissa, pressus, cadme?
-Nos Appenninigenae notavit. Suo surgere silices artificem cingebant sine. Omnem
-ignara sorte regale iussit volucrem solvit, ut rustice fluminaque restabat
-artus.</p>
-<ul>
-<li>Ulterius magni</li>
-<li>Nisi paene est vir abdidit praequestus potentem</li>
-<li>Laniata petens</li>
-<li>Abiit regem hastam adsimulat et orbem vulnera</li>
-<li>Quam ero Erigonen Delius</li>
-<li>Pereant vestemque funis</li>
-</ul>
-<p>Torrem enim, Neptune eosdem faenilibus, medio pavor fine. Foret arasque oscula
-haedum laeta, ut flammamque cruciatibus certamine obicit Tydides, erat manibus
-triplici. <em>Ebur</em> superata sermonibus quod; fata vultibus; <a href="http://www.excipit.io/nomina.html">de
-liceat</a>; pars sustinuere sed corpora sua,
-inde tota.</p></div>
+<h2 id="estrutura-do-codigo">Estrutura do código</h2>
+<p>Na pasta <strong>src</strong> se encontra a estrutura para o funcionamento da aplicação e na pasta <strong>docs</strong> toda a documentação para usuários e desenvolvedores.</p>
+<p>O código está em <em>python</em>, com pequenas inserções em banco com linguegem <em>SQL</em>. Utilize o <strong><em>pylint</em></strong> para manter a coerência dos arquivos.
+O código deve se manter todo em inglês, inclusive comentários.</p>
+<p>Toda a estrutura da aplicação se encontra no arquivo <strong>softdes.py</strong>, dentro da pasta <strong>src</strong>. Todas as funções estão comentadas com uma breve frase que explica sua funcionalidade.</p></div>
             </div>
         </div>
 
