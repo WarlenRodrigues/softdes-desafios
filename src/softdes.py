@@ -21,7 +21,7 @@ class InvalidFunction(Exception):
     message = "Função inválida."
 
 def lambda_handler(event):
-    """Validade studants exercices"""
+    """Validate studants exercices"""
     try:
         def not_equals(first, second):
             if isinstance(first, numbers.Number) and isinstance(second, numbers.Number):
