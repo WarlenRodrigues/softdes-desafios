@@ -1,1 +1,1 @@
-sqlite3 quiz.db < quiz.sql
+sqlite3 quiz.db < quiz.sql;
