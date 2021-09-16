@@ -1,2 +1,2 @@
-sqlite3 quiz.db < quiz.sql;
-python adduser.py;
+sqlite3 app/quiz.db < app/quiz.sql;
+python app/adduser.py;

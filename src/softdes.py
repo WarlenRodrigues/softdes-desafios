@@ -14,7 +14,7 @@ from flask import Flask, request, render_template
 from flask_httpauth import HTTPBasicAuth
 
 
-DBNAME = './quiz.db'
+DBNAME = 'app/quiz.db'
 
 class InvalidFunction(Exception):
     """Invalid function exception"""
@@ -141,7 +141,7 @@ def main():
             msg = "Sorry... Prazo expirado!"
 
         files = request.files['code']
-        filename = './upload/{0}-{1}.py'.format(auth.username(), sent)
+        filename = 'app/upload/{0}-{1}.py'.format(auth.username(), sent)
         files.save(filename)
         with open(filename,'r') as temp_file:
             answer = temp_file.read()

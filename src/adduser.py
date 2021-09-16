@@ -4,14 +4,14 @@ import hashlib
 
 def add_user(username, pwd, _type):
     """Add users from file users.csv to database"""
-    conn = sqlite3.connect('quiz.db')
+    conn = sqlite3.connect('app/quiz.db')
     cursor = conn.cursor()
     cursor.execute("""Insert into USER(user,pass,type)
           values("{0}","{1}","{2}");""".format(username, pwd, _type))
     conn.commit()
     conn.close()
 
-with open('users.csv','r') as file:
+with open('app/users.csv','r') as file:
     lines = file.read().splitlines()
 
 for users in lines:
