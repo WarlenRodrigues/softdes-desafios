@@ -31,3 +31,11 @@ Para rodar a aplicação use esse comando
 docker run --net=host -p 8080 -v nome_do_volume:/app softdes-desafios
 
 ```
+
+## Testando
+
+Para testar na raiz do projeto rode o comando:
+
+```
+sh src/scripts/test.sh
+```
